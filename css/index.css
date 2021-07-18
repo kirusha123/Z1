@@ -68,6 +68,14 @@
   background-color: white;
 }
 
+.active{
+  visibility: inherit;
+}
+
+.inactive{
+  display: none;
+}
+
 .header {
   display: inline-block;
   width: 100%;
@@ -97,6 +105,7 @@
 }
 
 .navbar .item {
+  cursor: pointer;
   display: inline-block;
   font-family: Roboto;
   font-style: normal;
@@ -107,6 +116,7 @@
 }
 
 .navbar .active-item {
+  cursor: pointer;
   display: inline-block;
   font-family: Roboto;
   font-style: normal;
@@ -118,6 +128,12 @@
   border-bottom-color: #2375e1;
   border-bottom-width: 2px;
 }
+
+
+.navbar  .item:hover{
+  color: #3f4146;
+}
+
 
 .aside-nav {
   vertical-align: top;
@@ -319,4 +335,69 @@
   margin-top: 15px;
   margin-bottom: 16px;
   border: 1px solid #dde0e6;
+}
+
+.map-block{
+  display: inline-block;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 24px;
+  min-width: 1248px;
+  max-width: 1249px;
+  min-height: 476px;
+  background-color: white;
+  border: 1px solid #dde0e6;
+
+}
+
+.map-header{
+  font-family: Roboto;
+  display: inline-block;
+  width: 1216px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 16px;
+  margin-top: 16px;
+  margin-right: 16px;
+  vertical-align: bottom;
+}
+
+.map{
+  width: 1216px;
+  margin: 0px 16px;
+  margin-top: 16px;
+
+}
+
+.timer-header{
+  display: inline-block;
+  width: 1216px;
+  height: 20px;
+  margin-left: 16px;
+  margin-top: 16px;
+  margin-right: 16px;
+  vertical-align: bottom;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #2D2F33;
+}
+.timer-block{
+  text-align: left;
+  display: inline-block;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 24px;
+  min-width: 1248px;
+  max-width: 1249px;
+  min-height: 88px; 
+  border: 1px solid #dde0e6;
+}
+
+.timer{
+  margin: 16px 0;
+  margin-left: 16px;
 }
