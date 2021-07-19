@@ -5,50 +5,27 @@ let click_elems = [
 
 ];
 
-
+let content_items = [
+    document.getElementById("activity-content"),
+    document.getElementById("map-content"),
+    document.getElementById("time-content")
+]
+debugger
 click_elems.forEach(element => {
     element.addEventListener("click", ()=>{
+        let counter = 0;
+        let a = 0;
         click_elems.forEach(el => {
             el.className = "item";
+            if (element === el){
+              a = counter;  
+            }
+            counter = counter + 1;
         });
         element.className = "active-item";
-        if (element.id == "header-activity" && element.className == "active-item"){
-            let time_content = document.getElementById("time-content")
-            time_content.className = "inactive";
-
-            let map_content = document.getElementById("map-content")
-            map_content.className = "inactive";
-
-            let activity_content = document.getElementById("activity-content")
-            let activity_content2 = document.getElementById("activity-content_")
-            activity_content.className = "active";
-            activity_content2.className = "active";
-        }
-
-        if (element.id == "header-map" && element.className == "active-item"){
-            let time_content = document.getElementById("time-content")
-            time_content.className = "inactive";
-
-            let map_content = document.getElementById("map-content")
-            map_content.className = "active";
-
-            let activity_content = document.getElementById("activity-content")
-            let activity_content2 = document.getElementById("activity-content_")
-            activity_content.className = "inactive";
-            activity_content2.className = "inactive";
-        }
-
-        if (element.id == "header-time" && element.className == "active-item"){
-            let time_content = document.getElementById("time-content")
-            time_content.className = "active";
-
-            let map_content = document.getElementById("map-content")
-            map_content.className = "inactive";
-
-            let activity_content = document.getElementById("activity-content")
-            let activity_content2 = document.getElementById("activity-content_")
-            activity_content.className = "inactive";
-            activity_content2.className = "inactive";
-        }
+        content_items.forEach(item => {
+            item.className = "inactive";
+        });
+        content_items[a].className = "active";
     });
 });

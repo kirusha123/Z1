@@ -1,1 +1,0 @@
-https://kirusha123.github.io/Z1/ - githubPages
