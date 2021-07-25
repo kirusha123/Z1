@@ -12,6 +12,20 @@
     />
     <title>Z1</title>
     <script defer src="./js/index.js"></script>
+    <script defer src="./js/timer.js"></script>
+    <script
+      defer
+      src="https://api-maps.yandex.ru/2.1/?apikey=3993f4de-45b9-4907-8af0-e2115b350b9a&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      function init(ymaps) {
+        var myMap = new ymaps.Map("YMapsID", {
+          center: [55.87, 37.66],
+          zoom: 10,
+        });
+      }
+    </script>
   </head>
 
   <body>
@@ -291,7 +305,8 @@
                   <i class="fas fa-chevron-up"></i>
                 </div>
               </div>
-              <img src="./img/map.jpg" alt="TytBylYa" class="map" />
+              <!--<img src="./img/map.jpg" alt="TytBylYa" class="map" />-->
+              <div id="YaMapsID" style="width: 400px; height: 300px"></div>
             </div>
           </div>
         </div>
@@ -307,7 +322,7 @@
                 </div>
               </div>
               <div class="timer">
-                <span>00:00:05</span>
+                <span id="timer">00:00:05</span>
               </div>
             </div>
           </div>

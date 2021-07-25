@@ -10,7 +10,30 @@ let content_items = [
     document.getElementById("map-content"),
     document.getElementById("time-content")
 ]
-debugger
+
+
+
+function setLocation(curLoc){
+    location.href = curLoc;
+    location.hash = curLoc;
+}
+
+if(localStorage.loc != ""){
+    setLocation('#/' + localStorage.loc);
+}else{
+    localStorage.loc = "activity";
+}
+
+function imitate_click(){
+    click_elems.forEach(el=>{
+        if (el.id.indexOf(localStorage.loc) != -1) {
+            el.click();
+        }
+    });
+}
+
+
+
 click_elems.forEach(element => {
     element.addEventListener("click", ()=>{
         let counter = 0;
@@ -23,9 +46,16 @@ click_elems.forEach(element => {
             counter = counter + 1;
         });
         element.className = "active-item";
+        let id = element.id;
+        id = id.substr(id.indexOf("-")+1);
+        localStorage.loc = id;
+        setLocation('#/' + localStorage.loc);
+
         content_items.forEach(item => {
             item.className = "inactive";
         });
         content_items[a].className = "active";
     });
 });
+
+imitate_click()
