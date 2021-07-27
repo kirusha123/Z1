@@ -17,15 +17,7 @@
       src="https://api-maps.yandex.ru/2.1/?apikey=3993f4de-45b9-4907-8af0-e2115b350b9a&lang=ru_RU"
       type="text/javascript"
     ></script>
-    <script type="text/javascript">
-      function init(ymaps) {
-        var myMap = new ymaps.Map("YMapsID", {
-          center: [55.87, 37.66],
-          zoom: 10,
-        });
-      }
-      init(ymaps);
-    </script>
+    <script src="./js/ymaps.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -306,7 +298,7 @@
                 </div>
               </div>
               <!--<img src="./img/map.jpg" alt="TytBylYa" class="map" />-->
-              <div id="YaMapsID" class="map"></div>
+              <div id="YMapsID" class="map"></div>
             </div>
           </div>
         </div>

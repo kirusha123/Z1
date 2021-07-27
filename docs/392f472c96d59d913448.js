@@ -1,1 +1,0 @@
-let start_point=(new Date).getTime(),timer=setInterval((()=>{let e=(new Date).getTime()-start_point;var t=Math.floor(e/1e3/60/60);e-=1e3*t*60*60;var r=Math.floor(e/1e3/60);e-=1e3*r*60;var a=Math.floor(e/1e3);e-=1e3*a;let n="",o="",l="";n=t<10?"0"+t+":":t+":",o=r<10?"0"+r+":":r+":",l=a<10?"0"+a:a,document.getElementById("timer").innerHTML=n+o+l}),10);
