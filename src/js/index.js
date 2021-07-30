@@ -18,15 +18,15 @@ function setLocation(curLoc){
     location.hash = curLoc;
 }
 
-if(localStorage.loc != ""){
-    setLocation('#/' + localStorage.loc);
+if(sessionStorage.getItem("loc") != ""){
+    setLocation('#/' + sessionStorage.getItem("loc"));
 }else{
-    localStorage.loc = "activity";
+    sessionStorage.setItem("loc","activity");
 }
 
 function imitate_click(){
     click_elems.forEach(el=>{
-        if (el.id.indexOf(localStorage.loc) != -1) {
+        if (el.id.indexOf(sessionStorage.getItem("loc")) != -1) {
             el.click();
         }
     });
@@ -48,8 +48,8 @@ click_elems.forEach(element => {
         element.className = "active-item";
         let id = element.id;
         id = id.substr(id.indexOf("-")+1);
-        localStorage.loc = id;
-        setLocation('#/' + localStorage.loc);
+        sessionStorage.setItem("loc", id);
+        setLocation('#/' + sessionStorage.getItem("loc"));
 
         content_items.forEach(item => {
             item.className = "inactive";
