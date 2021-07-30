@@ -18,7 +18,7 @@ function setLocation(curLoc){
     location.hash = curLoc;
 }
 
-if(sessionStorage.getItem("loc") != "null"){
+if(sessionStorage.getItem("loc").length() != 0){
     setLocation('#/' + sessionStorage.getItem("loc"));
 }else{
     sessionStorage.setItem("loc","activity");
